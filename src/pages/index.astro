@@ -4,16 +4,13 @@ import Layout from '~/layouts/PageLayout.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import Note from '~/components/widgets/Note.astro';
 import Features from '~/components/widgets/Features.astro';
-import Features2 from '~/components/widgets/Features2.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import Content from '~/components/widgets/Content.astro';
-import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
-import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const metadata = {
-  title: 'AstroWind — Free template for creating websites with Astro + Tailwind CSS',
+  title: 'iulink — Connect on your terms',
   ignoreTitleTemplate: true,
 };
 ---
@@ -25,78 +22,74 @@ const metadata = {
     actions={[
       {
         variant: 'primary',
-        text: 'Get template',
-        href: 'https://github.com/hi100e/astrowind6',
-        target: '_blank',
+        text: 'Get started free',
+        href: '/download',
         icon: 'tabler:download',
       },
-      { text: 'Learn more', href: '#features' },
+      { text: 'Read the docs', href: 'https://docs.iulink.com', target: '_blank' },
     ]}
-    image={{ src: '~/assets/images/hero-image.png', alt: 'AstroWind Hero Image' }}
+    image={{ src: '~/assets/images/hero-image.png', alt: 'iulink — expose ports and share services through any NAT' }}
   >
     <Fragment slot="title">
-      Free template for <span class="hidden xl:inline">creating websites with</span>
-      <span class="text-accent dark:text-white"> Astro 6</span> + Tailwind CSS 4
+      Connect on <span class="text-accent dark:text-white">your terms.</span>
     </Fragment>
 
     <Fragment slot="subtitle">
       <span class="hidden sm:inline">
-        <span class="font-semibold">AstroWind</span> is a free, customizable and production-ready template for Astro 6
-        + Tailwind CSS 4.</span
-      >
-      <span class="block mb-1 sm:hidden font-bold text-blue-600">AstroWind: Production-ready.</span>
-      Suitable for Startups, Small Business, SaaS websites, Professional Portfolios, Marketing websites, Landing Pages &
-      Blogs.
+        iulink is a connectivity platform that lets you expose ports, share services, and build mesh VPNs through any
+        NAT — with your broker or ours.
+      </span>
+      <span class="block mb-1 sm:hidden font-bold text-blue-600">Expose ports through any NAT. No router config.</span>
     </Fragment>
   </Hero>
 
   <!-- Note Widget ******************* -->
 
-  <Note title="Philosophy:" description="Simplicity, Best Practices and High Performance" />
+  <Note title="The principle:" description="Full product. Full choice. Your broker, your path, your relay." />
 
   <!-- Features Widget *************** -->
 
   <Features
     id="features"
-    tagline="Features"
-    title="What you get with AstroWind"
-    subtitle="One of the most professional and comprehensive templates currently on the market. Most starred & forked Astro theme in 2022, 2023 and 2024."
+    tagline="What iulink gives you"
+    title="Every layer is a choice, not a constraint."
+    subtitle="Most connectivity tools lock you into their infrastructure. iulink exposes the controls."
     items={[
       {
-        title: 'Astro + Tailwind CSS Integration',
+        title: 'Bring your own broker',
         description:
-          'A seamless integration between two great frameworks that offer high productivity, performance and versatility.',
-        icon: 'tabler:brand-tailwind',
+          'Run iubroker on any VPS or homelab machine. Your data plane never touches our servers. Or use our hosted broker — same CLI, same protocol.',
+        icon: 'tabler:server',
       },
       {
-        title: 'Ready-to-use Components',
+        title: 'Works through any NAT',
         description:
-          'Widgets made with Tailwind CSS ready to be used in Marketing Websites, SaaS, Blogs, Personal Profiles, Small Business...',
-        icon: 'tabler:components',
+          'CGNAT, double-NAT, strict firewalls — iulink uses a three-path fallback model. Direct when possible, relayed when not. Automatic and silent.',
+        icon: 'tabler:network',
       },
       {
-        title: 'Best Practices',
+        title: 'No root required',
         description:
-          'Creating secure, efficient, and user-friendly websites that deliver exceptional experiences and lasting value.',
-        icon: 'tabler:list-check',
+          'The daemon runs as your user. Serverlets expose a local port. Nothing binds to privileged ports. Nothing runs as root.',
+        icon: 'tabler:shield-lock',
       },
       {
-        title: 'Excellent Page Speed',
+        title: 'HTTP services over the broker',
         description:
-          'Having a good page speed impacts organic search ranking, improves user experience (UI/UX) and increase conversion rates.',
-        icon: 'tabler:rocket',
+          'Weblets expose local HTTP services through your broker without QUIC or a relay. Share a dev server or dashboard with a URL instead of a port.',
+        icon: 'tabler:world',
       },
       {
-        title: 'Search Engine Optimization (SEO)',
+        title: 'Mesh VPN in one command',
         description:
-          "SEO lies in its ability to enhance a website's visibility, driving organic traffic and enabling it to reach a wider audience.",
-        icon: 'tabler:arrows-right-left',
+          'Netlets create WireGuard-based mesh VPNs between machines. BrokerMesh covers an entire broker with a single command.',
+        icon: 'tabler:topology-star',
       },
       {
-        title: 'Open to new ideas and contributions',
+        title: 'Hub sharing',
         description:
-          'Embracing a culture that is open to new ideas and contributions is integral fostering innovation, collaboration, and a dynamic user experience.',
-        icon: 'tabler:bulb',
+          'Group your tunnels into hubs and share them with teammates or family. Revoke access without touching the remote machine.',
+        icon: 'tabler:share',
       },
     ]}
   />
@@ -105,35 +98,30 @@ const metadata = {
 
   <Content
     isReversed
-    tagline="Inside template"
-    title="AstroWind's Blueprint: Fun Meets Functionality!"
+    tagline="Security model"
+    title="Your services. Invisible to the internet."
     items={[
       {
-        title: 'Built on top of Astro 6',
+        title: 'Broker as your network boundary',
         description:
-          'Benefiting from the performance and developer-friendly features of this modern static site generator.',
+          'The broker is the only public-facing component. Your SSH daemon, dev server, or database is never exposed — the broker is the gatekeeper.',
       },
       {
-        title: 'Styled using Tailwind CSS',
+        title: 'No inbound ports on your machine',
         description:
-          'Facilitating rapid design and consistent styling with this highly popular utility-first CSS framework.',
+          'Serverlets initiate outbound connections to the broker. Your firewall stays closed. No port forwarding, no DMZ.',
       },
       {
-        title: 'Cross-browser compatibility',
+        title: 'Self-hosted means self-controlled',
         description:
-          'Ensure your website looks and functions consistently across various web browsers, delivering a seamless experience to all users.',
+          'Run iubroker on hardware you own. Audit the code. Rotate the keys. Set your own access policies.',
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Colorful Image',
+      src: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=2034&q=80',
+      alt: 'Server rack with secure networking',
     }}
   >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Building on modern foundations</h3>
-      Gain a competitive advantage by incorporating industry leading practices
-    </Fragment>
-
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
@@ -143,234 +131,97 @@ const metadata = {
 
   <Content
     isAfterContent
+    tagline="Three-path model"
+    title="Choose your path — or let iulink choose for you."
     items={[
       {
-        title: 'High level of customization',
-        description: `Tailor the template effortlessly to match your brand's identity and requirements, making your website distinct and saving you time.`,
+        title: 'Direct (peer-to-peer)',
+        description:
+          'When both peers can reach each other, iulink establishes a direct connection. No relay, no latency overhead.',
       },
       {
-        title: 'Multiple layout possibilities',
+        title: 'Broker-routed',
         description:
-          'Explore various layout options to find the structure that best presents your content, enhancing user engagement and navigation.',
+          'When direct fails, traffic flows through your broker. Still end-to-end between your machines, just using the broker as a relay.',
       },
       {
-        title: 'Fully responsive design',
+        title: 'UDP relay',
         description:
-          "Ensure your website's optimal performance on various devices and screen sizes, providing a consistent and enjoyable user experience.",
-      },
-      {
-        title: 'Integration of media',
-        description:
-          'Seamlessly incorporate images, videos, and multimedia elements that enhance your content and engage visitors effectively.',
+          'When the broker path is blocked, iulink falls back to a relay node. Fully automatic — you never configure this.',
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1600132806370-bf17e65e942f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2194&q=80',
-      alt: 'Blueprint Image',
+      src: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=2072&q=80',
+      alt: 'Network paths and data routing',
     }}
-  >
-    <Fragment slot="content">Ensure your online presence truly represents you.</Fragment>
-
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
-
-  <!-- Content Widget **************** -->
-
-  <Content
-    isReversed
-    isAfterContent
-    items={[
-      {
-        title: 'Enhanced user engagement',
-        description:
-          'Captivate your audience with interactive elements, intuitive navigation, and visually appealing layouts, encouraging longer visits.',
-      },
-      {
-        title: 'Continuous improvement',
-        description:
-          'Ensure your website stays aligned with the latest trends and technologies through regular updates and enhancements.',
-      },
-      {
-        title: 'Time and resource efficiency',
-        description:
-          'Skip the time-consuming process of building a website from scratch and launch your online presence sooner with AstroWind.',
-      },
-      {
-        title: 'Community support',
-        description: `Join the growing AstroWind community for insights, resources, and assistance, ensuring you're never alone on your web development journey.`,
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1611462985358-60d3498e0364?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Astronauts Image',
-    }}
-  >
-    <Fragment slot="content">Designed to foster growth and success.</Fragment>
-
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
+  />
 
   <!-- Steps Widget ****************** -->
 
   <Steps
-    title="Get your dream website up and running in no time with AstroWind."
+    title="Up and running in three commands."
     items={[
       {
-        title: 'Step 1: <span class="font-medium">Download</span>',
+        title: 'Step 1: <span class="font-medium">Install</span>',
         description:
-          "Kickstart with GitHub! Either fork the AstroWind template or simply click 'Use this template'. Your canvas awaits, ready for your digital masterpiece. In just a few clicks, you've already set the foundation.",
-        icon: 'tabler:package',
+          'One-liner installer. Runs as your user — no root, no sudo, no package manager lock-in.<br><br><code class="text-sm bg-slate-100 dark:bg-slate-800 px-3 py-1 rounded font-mono">curl -fsSL https://get.iulink.com | sh</code>',
+        icon: 'tabler:download',
       },
       {
-        title: 'Step 2: <span class="font-medium">Add content</span>',
+        title: 'Step 2: <span class="font-medium">Expose a port</span>',
         description:
-          "Pour your vision into it. Add images, text, and all that jazz to breathe life into your digital space. Remember, it's the content that tells your story, so make it captivating.",
-        icon: 'tabler:letter-case',
+          'Create a named serverlet for any local port. Works behind CGNAT — no router config needed.<br><br><code class="text-sm bg-slate-100 dark:bg-slate-800 px-3 py-1 rounded font-mono">iulink expose --port 8080 --name myservice</code>',
+        icon: 'tabler:plug',
       },
       {
-        title: 'Step 3: <span class="font-medium">Customize styles</span>',
+        title: 'Step 3: <span class="font-medium">Connect from anywhere</span>',
         description:
-          'Give it your personal touch. Tailor colors, fonts, and layouts until it feels just right. Your unique flair, amplified by AstroWind! Precision in design ensures a seamless user experience.',
-        icon: 'tabler:paint',
+          'Connect by service name from any other machine. The broker handles routing.<br><br><code class="text-sm bg-slate-100 dark:bg-slate-800 px-3 py-1 rounded font-mono">iulink connect --service iulink://myservice</code>',
+        icon: 'tabler:plug-connected',
       },
       {
-        title: 'Ready!',
+        title: "You're in.",
         icon: 'tabler:check',
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1616198814651-e71f960c3180?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
-      alt: 'Steps image',
+      src: 'https://images.unsplash.com/photo-1629654297299-c8506221ca97?auto=format&fit=crop&w=987&q=80',
+      alt: 'Developer at terminal',
     }}
-  />
-
-  <!-- Features2 Widget ************** -->
-
-  <Features2
-    title="Most used widgets"
-    subtitle="Provides frequently used components for building websites using Tailwind CSS"
-    tagline="Components"
-    items={[
-      {
-        title: 'Headers',
-        description: "Ever tried driving without GPS? Boom! That's why websites need headers for direction.",
-        icon: 'flat-color-icons:template',
-      },
-      {
-        title: 'Heros',
-        description:
-          "Picture a superhero landing – epic, right? That's the job of a Hero section, making grand entrances!",
-        icon: 'flat-color-icons:gallery',
-      },
-      {
-        title: 'Features',
-        description:
-          'Where websites strut their stuff and show off superpowers. No holding back on the bragging rights here!',
-        icon: 'flat-color-icons:approval',
-      },
-      {
-        title: 'Content',
-        description:
-          "Dive into the meat and potatoes of a site; without it, you'd just be window shopping. Content is king.",
-        icon: 'flat-color-icons:document',
-      },
-      {
-        title: 'Call-to-Action',
-        description:
-          'That enthusiastic friend who\'s always urging, "Do it! Do it!"? Yeah, that\'s this button nudging you towards adventure.',
-        icon: 'flat-color-icons:advertising',
-      },
-      {
-        title: 'Pricing',
-        description: 'Behold the dessert menu of the website world. Tempting choices await, can you resist?',
-        icon: 'flat-color-icons:currency-exchange',
-      },
-      {
-        title: 'Testimonial',
-        description: 'Step into the gossip corner! Here, other visitors spill the beans and share the juicy details.',
-        icon: 'flat-color-icons:voice-presentation',
-      },
-      {
-        title: 'Contact',
-        description:
-          'Like a digital mailbox, but faster! Drop a line, ask a question, or send a virtual high-five. Ding! Message in.',
-        icon: 'flat-color-icons:business-contact',
-      },
-      {
-        title: 'Footers',
-        description: "The footer's like the credits of a movie but sprinkled with easter eggs. Time to hunt!",
-        icon: 'flat-color-icons:database',
-      },
-    ]}
-  >
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Features2>
-
-  <!-- HighlightedPosts Widget ******* -->
-
-  <BlogLatestPosts
-    title="Find out more content in our Blog"
-    information={`The blog is used to display AstroWind documentation.
-                        Each new article will be an important step that you will need to know to be an expert in creating a website using Astro + Tailwind CSS.
-                        Astro is a very interesting technology. Thanks.
-                `}
   />
 
   <!-- FAQs Widget ******************* -->
 
   <FAQs
-    title="Frequently Asked Questions"
-    subtitle="Dive into the following questions to gain insights into the powerful features that AstroWind offers and how it can elevate your web development journey."
+    title="Common questions"
     tagline="FAQs"
     classes={{ container: 'max-w-6xl' }}
     items={[
       {
-        title: 'Why AstroWind?',
+        title: 'Does it work behind CGNAT?',
         description:
-          "Michael Knight a young loner on a crusade to champion the cause of the innocent. The helpless. The powerless in a world of criminals who operate above the law. Here he comes Here comes Speed Racer. He's a demon on wheels.",
+          'Yes. CGNAT is the primary use case. iulink never requires inbound ports on your machine. It uses outbound connections to the broker, with relay fallback when needed.',
       },
       {
-        title: 'What do I need to start?',
+        title: 'Can I run my own broker?',
         description:
-          'Space, the final frontier. These are the voyages of the Starship Enterprise. Its five-year mission: to explore strange new worlds. Many say exploration is part of our destiny, but it’s actually our duty to future generations.',
+          'Yes. iubroker is open-source (AGPL) and runs on any Linux machine. Point the iulink CLI at your own broker with one config line.',
       },
       {
-        title: 'How to install the Astro + Tailwind CSS template?',
+        title: 'Does iulink require root?',
         description:
-          "Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people who make shows, and on the strength of that one show they decide if they're going to make more shows.",
+          'No. The daemon and all tunnel types run as a normal user. Nothing binds to privileged ports. WireGuard-based tunnels (Netlet) require a kernel module, which is present on most modern Linux distros.',
       },
       {
-        title: "What's something that you don't understand?",
+        title: 'What happens if my broker goes down?',
         description:
-          "A flower in my garden, a mystery in my panties. Heart attack never stopped old Big Bear. I didn't even know we were calling him Big Bear.",
+          'Existing direct peer-to-peer connections stay up. New connections and relay-dependent tunnels will fail until the broker is restored. Self-hosted broker users control their own uptime.',
       },
       {
-        title: 'What is something that you would like to try again?',
+        title: 'How is iulink different from ngrok or Cloudflare Tunnel?',
         description:
-          "A business big enough that it could be listed on the NASDAQ goes belly up. Disappears! It ceases to exist without me. No, you clearly don't know who you're talking to, so let me clue you in.",
+          'Those tools manage the infrastructure for you — you use their broker, their relay, their rules. iulink gives you the same capabilities but lets you run any component yourself. Same product, full choice.',
       },
-      {
-        title: 'If you could only ask one question to each person you meet, what would that question be?',
-        description:
-          "This is not about revenge. This is about justice. A lot of things can change in twelve years, Admiral. Well, that's certainly good to know. About four years. I got tired of hearing how young I looked.",
-      },
-    ]}
-  />
-
-  <!-- Stats Widget ****************** -->
-
-  <Stats
-    stats={[
-      { title: 'Downloads', amount: '132K' },
-      { title: 'Stars', amount: '24.8K' },
-      { title: 'Forks', amount: '10.3K' },
-      { title: 'Users', amount: '48.4K' },
     ]}
   />
 
@@ -380,20 +231,22 @@ const metadata = {
     actions={[
       {
         variant: 'primary',
-        text: 'Get template',
-        href: 'https://github.com/hi100e/astrowind6',
-        target: '_blank',
+        text: 'Get started free',
+        href: '/download',
         icon: 'tabler:download',
+      },
+      {
+        text: 'Why iulink?',
+        href: '/why-iulink',
       },
     ]}
   >
     <Fragment slot="title">
-      Astro&nbsp;+&nbsp;<br class="block sm:hidden" /><span class="sm:whitespace-nowrap">Tailwind CSS</span>
+      Start free. Bring your own broker.<br class="hidden md:block" /> No vendor lock-in.
     </Fragment>
 
     <Fragment slot="subtitle">
-      Be very surprised by these huge fake numbers you are seeing on this page. <br class="hidden md:inline" />Don't
-      waste more time! :P
+      The free tier includes everything. Upgrade only if you want us to manage the infrastructure.
     </Fragment>
   </CallToAction>
 </Layout>

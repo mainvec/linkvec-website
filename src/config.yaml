@@ -1,30 +1,30 @@
 site:
-  name: AstroWind
-  site: 'https://astrowind.vercel.app'
+  name: iulink
+  site: 'https://iulink.com'
   base: '/'
   trailingSlash: false
 
-  googleSiteVerificationId: orcPxI47GSa-cRvY11tUe6iGg2IO_RPvnA1q95iEM3M
+  googleSiteVerificationId: ''
 
 # Default SEO metadata
 metadata:
   title:
-    default: AstroWind
-    template: '%s — AstroWind'
-  description: "\U0001F680 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs."
+    default: iulink — Connect on your terms
+    template: '%s — iulink'
+  description: "iulink is a connectivity platform that lets you expose ports, share services, and build mesh VPNs through any NAT — with your broker or ours."
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: AstroWind
+    site_name: iulink
     images:
       - url: '~/assets/images/default.png'
         width: 1200
         height: 628
     type: website
   twitter:
-    handle: '@arthelokyo'
-    site: '@arthelokyo'
+    handle: '@iulink'
+    site: '@iulink'
     cardType: summary_large_image
 
 i18n:
@@ -72,8 +72,4 @@ ui:
   theme: 'system' # Values: "system" | "light" | "dark" | "light:only" | "dark:only"
 
 announcement:
-  isEnabled: true
-  label: 'NEW' # Optional badge label. Remove or leave empty to hide the badge.
-  text: 'Astro 6 + Tailwind CSS 4 fork is now available!'
-  href: 'https://github.com/hi100e/astrowind6'
-  isTargetBlank: true
+  isEnabled: false

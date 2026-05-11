@@ -1,0 +1,148 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import Content from '~/components/widgets/Content.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Download iulink',
+  description: 'Install iulink in 60 seconds. One command. Works behind CGNAT. No router config required.',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- HeroText Widget ******************* -->
+
+  <HeroText
+    tagline="Download"
+    title="Up and running in 60 seconds."
+    subtitle="One command. Works behind CGNAT, double-NAT, and strict firewalls. No router config required."
+  />
+
+  <!-- Steps Widget ****************** -->
+
+  <Steps
+    title="Three commands to connected."
+    items={[
+      {
+        title: 'Step 1: <span class="font-medium">Install</span>',
+        description:
+          'Run the installer. Works on Linux, macOS, and Windows (WSL). No root required — the daemon runs as your user.<br><br><code class="text-sm bg-slate-100 dark:bg-slate-800 px-3 py-1 rounded font-mono">curl -fsSL https://get.iulink.com | sh</code>',
+        icon: 'tabler:download',
+      },
+      {
+        title: 'Step 2: <span class="font-medium">Expose a port</span>',
+        description:
+          'Point iulink at any local port. It creates a serverlet — a named tunnel others can reach through your broker.<br><br><code class="text-sm bg-slate-100 dark:bg-slate-800 px-3 py-1 rounded font-mono">iulink expose --port 8080 --name myservice</code>',
+        icon: 'tabler:plug',
+      },
+      {
+        title: 'Step 3: <span class="font-medium">Connect from anywhere</span>',
+        description:
+          'On any other machine, connect to the service by name. The broker routes the connection — CGNAT is not a problem.<br><br><code class="text-sm bg-slate-100 dark:bg-slate-800 px-3 py-1 rounded font-mono">iulink connect --service iulink://myservice</code>',
+        icon: 'tabler:plug-connected',
+      },
+      {
+        title: "You're connected.",
+        icon: 'tabler:check',
+      },
+    ]}
+  />
+
+  <!-- Features3 Widget ************** -->
+
+  <Features3
+    title="Runs everywhere you do."
+    subtitle="Pre-built binaries for all major platforms. No dependencies, no package manager required."
+    columns={3}
+    items={[
+      {
+        title: 'Linux',
+        description: 'x86_64, arm64, armhf — Debian, Ubuntu, Alpine, Arch, and any systemd or OpenRC distro.',
+        icon: 'tabler:brand-debian',
+      },
+      {
+        title: 'macOS',
+        description: 'Intel and Apple Silicon (M1/M2/M3). Homebrew tap coming soon.',
+        icon: 'tabler:brand-apple',
+      },
+      {
+        title: 'Windows',
+        description: 'Native installer and WSL2 support. PowerShell and CMD compatible.',
+        icon: 'tabler:brand-windows',
+      },
+      {
+        title: 'Raspberry Pi',
+        description: 'armhf binary runs on Pi 3, Pi 4, and Pi Zero 2 W out of the box.',
+        icon: 'tabler:cpu',
+      },
+      {
+        title: 'Docker',
+        description: 'Official container image available. Compose example in the docs.',
+        icon: 'tabler:brand-docker',
+      },
+      {
+        title: 'GitHub Releases',
+        description: 'All versions and checksums published. Pin to any release for reproducible setups.',
+        icon: 'tabler:brand-github',
+      },
+    ]}
+  />
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isReversed
+    title="Bring your own broker — no account needed."
+    subtitle="Use the free hosted broker to get started in seconds, or point iulink at any broker you run yourself."
+    items={[
+      {
+        title: 'Self-hosted broker',
+        description:
+          'Run iubroker on any VPS or homelab machine. Your traffic never touches our infrastructure.',
+        icon: 'tabler:server',
+      },
+      {
+        title: 'Free hosted broker',
+        description:
+          'No setup. iulink connects to our shared broker automatically. Upgrade to a dedicated broker any time.',
+        icon: 'tabler:cloud',
+      },
+      {
+        title: 'Switch brokers without reinstalling',
+        description:
+          'Your hubs and tunnels travel with you. Switching brokers is one config line — no re-creating services.',
+        icon: 'tabler:arrows-exchange',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=2034&q=80',
+      alt: 'Server rack representing self-hosted infrastructure',
+    }}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    title="Need a hosted broker?"
+    subtitle="The free tier uses our shared broker. Upgrade to a dedicated broker — provisioned in under 60 seconds."
+    actions={[
+      {
+        variant: 'primary',
+        text: 'View pricing',
+        href: '/pricing',
+      },
+      {
+        text: 'Read the docs',
+        href: 'https://docs.iulink.com',
+        target: '_blank',
+      },
+    ]}
+  />
+</Layout>

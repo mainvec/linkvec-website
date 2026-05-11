@@ -8,7 +8,9 @@ import Features3 from '~/components/widgets/Features3.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const metadata = {
-  title: 'Pricing',
+  title: 'Pricing — iulink',
+  description:
+    'iulink is free to use. Paid plans are just us managing infrastructure for you — the product and protocol are identical across all tiers.',
 };
 ---
 
@@ -17,94 +19,88 @@ const metadata = {
 
   <HeroText
     tagline="Pricing"
-    title="Stellar Pricing for Every Journey"
-    subtitle="Choose the perfect plan that aligns with your cosmic goals."
+    title="Infrastructure you control — or we run it for you."
+    subtitle="Paid tiers are us managing infrastructure. The product and protocol are the same across every plan."
   />
 
   <!-- Pricing Widget ******************* -->
 
   <Prices
-    title="Our prices"
-    subtitle="Only pay for what you need"
+    title="Simple, honest pricing."
+    subtitle="Everything works on the free tier. Upgrading just means we handle the broker for you."
     prices={[
       {
-        title: 'basic',
-        subtitle: 'Optimal choice for personal use',
-        price: 29,
+        title: 'Community',
+        subtitle: 'Everything. You supply the infra.',
+        price: 0,
+        period: 'forever free',
+        items: [
+          { description: 'Full CLI — all tunnel types (Serverlet, Clientlet, Weblet, Netlet)' },
+          { description: 'iubroker self-hosted (AGPL) — run on any VPS or homelab' },
+          { description: 'Connect to the shared hosted broker' },
+          { description: 'Community relay nodes' },
+          { description: 'Hub sharing — share services with others' },
+          { description: 'No machine limits, no bandwidth caps on BYOB' },
+        ],
+        callToAction: {
+          text: 'Get started free',
+          href: '/download',
+        },
+      },
+      {
+        title: 'Developer',
+        subtitle: 'Dedicated hosted broker. Flat rate.',
+        price: 9,
         period: 'per month',
         items: [
-          {
-            description: 'Etiam in libero, et volutpat',
-          },
-          {
-            description: 'Aenean ac nunc dolor tristique',
-          },
-          {
-            description: 'Cras scelerisque accumsan lib',
-          },
-          {
-            description: 'In hac habitasse',
-          },
+          { description: 'Everything in Community' },
+          { description: 'Dedicated broker — your traffic stays isolated' },
+          { description: 'Persistent relay allocation — lower latency than shared pool' },
+          { description: 'Web dashboard for hub and tunnel management' },
+          { description: 'Email support' },
+          { description: 'Annual billing available ($90/yr — 2 months free)' },
         ],
         callToAction: {
-          target: '_blank',
-          text: 'Get started',
-          href: '#',
-        },
-      },
-      {
-        title: 'standard',
-        subtitle: 'Optimal choice for small teams',
-        price: 69,
-        period: 'Per Month',
-        items: [
-          {
-            description: 'Proin vel laoreet',
-          },
-          {
-            description: 'Ut efficitur habitasse egestas',
-          },
-          {
-            description: 'Volutpat hac curabitur',
-          },
-          {
-            description: 'Pellentesque blandit ut nibh',
-          },
-          {
-            description: 'Donec fringilla sem',
-          },
-        ],
-        callToAction: {
-          target: '_blank',
-          text: 'Get started',
-          href: '#',
+          text: 'Start Developer plan',
+          href: 'https://app.iulink.com/signup?plan=developer',
         },
         hasRibbon: true,
-        ribbonTitle: 'popular',
+        ribbonTitle: 'Most popular',
       },
       {
-        title: 'premium',
-        subtitle: 'Optimal choice for companies',
-        price: 199,
-        period: 'Per Month',
+        title: 'Team',
+        subtitle: 'Broker cluster, audit log, admin console.',
+        price: 14,
+        period: 'per user / month',
         items: [
-          {
-            description: 'Curabitur suscipit risus',
-          },
-          {
-            description: 'Aliquam habitasse malesuada',
-          },
-          {
-            description: 'Suspendisse sit amet blandit',
-          },
-          {
-            description: 'Suspendisse auctor blandit dui',
-          },
+          { description: 'Everything in Developer' },
+          { description: 'High-availability broker cluster' },
+          { description: 'Audit log and access controls' },
+          { description: 'Admin console — manage members and hubs' },
+          { description: 'Slack / Teams support channel' },
+          { description: 'Minimum 2 users' },
         ],
         callToAction: {
-          target: '_blank',
-          text: 'Get started',
-          href: '#',
+          text: 'Start Team plan',
+          href: 'https://app.iulink.com/signup?plan=team',
+        },
+      },
+      {
+        title: 'Self-Hosted Pro',
+        subtitle: 'Commercial iubroker license.',
+        price: 199,
+        period: 'per year flat',
+        items: [
+          { description: 'Commercial license for iubroker (no AGPL copyleft requirement)' },
+          { description: 'Priority security patches and CVE notifications' },
+          { description: 'Compliance documentation (SOC 2 readiness guide)' },
+          { description: 'Private Slack channel' },
+          { description: 'SLA-backed email support' },
+          { description: 'No per-machine or per-user charges' },
+        ],
+        callToAction: {
+          text: 'Buy Self-Hosted Pro',
+          href: 'https://app.iulink.com/signup?plan=selfhosted-pro',
         },
       },
     ]}
@@ -113,39 +109,25 @@ const metadata = {
   <!-- Features3 Widget ************** -->
 
   <Features3
-    title="Price-related features"
-    subtitle="Discover the advantages of choosing our plans"
-    columns={2}
+    title="What stays free forever."
+    subtitle="No bait-and-switch. These capabilities will never move behind a paywall."
+    columns={3}
     items={[
       {
-        title: 'Tiered Pricing Plans',
-        description: 'Choose from a range of pricing plans designed to accommodate different budgets and requirements.',
-        icon: 'tabler:stairs',
+        title: 'Full CLI',
+        description:
+          'Every tunnel type — Serverlet, Clientlet, Weblet, WebClientlet, Netlet, BrokerMesh — free forever.',
+        icon: 'tabler:terminal-2',
       },
       {
-        title: 'Transparent Pricing',
-        description: 'Clearly displayed pricing details for each plan, with no hidden costs or unexpected charges.',
-        icon: 'tabler:flip-vertical',
+        title: 'Self-hosted iubroker',
+        description: 'The broker is open-source (AGPL). Run it on any machine you control, always.',
+        icon: 'tabler:server',
       },
       {
-        title: 'Secure Payment Methods',
-        description: 'Secure payment gateways to protect your financial information during transactions.',
-        icon: 'tabler:shield-lock',
-      },
-      {
-        title: 'Instant Access',
-        description: `Immediate access to your chosen plan's features and templates upon subscription.`,
-        icon: 'tabler:accessible',
-      },
-      {
-        title: 'Upgrade Value',
-        description: 'Upgrade to higher-tier plans to unlock more features and benefits for an enhanced experience.',
-        icon: 'tabler:chevrons-up',
-      },
-      {
-        title: '24H support',
-        description: 'Questions answered via live chat, email or phone, every calendar day.',
-        icon: 'tabler:headset',
+        title: 'Shared hosted broker',
+        description: 'Free access to our shared broker. Great for personal use and getting started.',
+        icon: 'tabler:cloud',
       },
     ]}
     classes={{ container: 'max-w-5xl' }}
@@ -154,42 +136,38 @@ const metadata = {
   <!-- Steps Widget ****************** -->
 
   <Steps
-    title="A guided journey from plans to creativity"
-    tagline="simplified process"
+    title="Upgrading takes under 60 seconds."
+    tagline="How it works"
     isReversed={true}
     items={[
       {
-        title: 'Explore plans',
+        title: 'Start free — BYOB or shared broker',
         icon: 'tabler:number-1',
       },
       {
-        title: 'Select a plan',
+        title: 'Hit a limit or want isolated infrastructure',
         icon: 'tabler:number-2',
       },
       {
-        title: 'Sign Up / Log In',
+        title: 'Choose a plan and sign up',
         icon: 'tabler:number-3',
       },
       {
-        title: 'Review order',
+        title: 'Broker provisioned automatically',
         icon: 'tabler:number-4',
       },
       {
-        title: 'Enter payment details',
+        title: 'Update one line in your config',
         icon: 'tabler:number-5',
       },
       {
-        title: 'Confirmation',
+        title: 'All your existing hubs and tunnels keep working',
         icon: 'tabler:number-6',
-      },
-      {
-        title: 'Download and start using the template(s)',
-        icon: 'tabler:number-7',
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1536816579748-4ecb3f03d72a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
-      alt: 'Steps image',
+      src: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=987&q=80',
+      alt: 'Server infrastructure',
     }}
   />
 
@@ -197,33 +175,38 @@ const metadata = {
 
   <FAQs
     title="Pricing FAQs"
-    subtitle="Choosing the right plan is important, and we're here to answer your questions. If you have queries about our pricing options, you're in the right place."
+    subtitle="Still have questions? These are the ones we hear most often."
     columns={1}
     items={[
       {
-        title: 'Do the plans come with customer support?',
+        title: 'Is anything unlimited on the free tier?',
         description:
-          'Absolutely, all plans include access to our dedicated customer support to assist you with any queries or concerns.',
+          'When you bring your own broker (BYOB), there are no machine limits, no tunnel limits, and no bandwidth caps imposed by iulink. The only limits are those of the machine running your broker.',
       },
       {
-        title: 'Is there a trial period for the different plans?',
+        title: 'What exactly do paid plans include that free does not?',
         description:
-          "Unfortunately, we don't offer trial periods for the plans. However, you can check out our demo section to preview the quality of our templates.",
+          'Paid plans mean we provision and operate the broker infrastructure for you — dedicated broker nodes, relay allocation, HA clustering (Team), and SLA-backed support. The CLI, protocol, and all tunnel types are identical across every tier.',
       },
       {
-        title: 'Can I switch between plans?',
+        title: 'Can I self-host the broker and still upgrade?',
         description:
-          'Certainly! You can easily upgrade or downgrade your plan, at any time, to find the one that best suits your evolving requirements.',
+          'Yes. Self-Hosted Pro is specifically for teams that want to keep running their own broker but need a commercial license for iubroker (removes the AGPL copyleft requirement) and enterprise support.',
       },
       {
-        title: 'What payment methods do you accept?',
+        title: 'Can I switch brokers after upgrading?',
         description:
-          'We accept major credit cards and online payment methods to ensure a convenient and secure transaction process.',
+          'Yes. Switching brokers is a single config change. Your hubs, tunnels, and service names are portable — they are not tied to any broker.',
       },
       {
-        title: 'Are there any hidden fees beyond the displayed cost?',
+        title: 'What is a dedicated broker?',
         description:
-          'No, the subscription cost covers all the features and templates listed under each plan. There are no hidden fees or extra charges.',
+          'On the Developer plan and above, we provision a broker node exclusively for your account. Traffic from other accounts never touches your broker. This also means your tunnels are not affected by activity from other users.',
+      },
+      {
+        title: 'Is the CLI always free?',
+        description:
+          'Yes, the iulink CLI is open-source (AGPL) and will always be free to download and use. You can use it with any broker — ours or your own.',
       },
     ]}
   />
@@ -231,13 +214,18 @@ const metadata = {
   <!-- CallToAction Widget *********** -->
 
   <CallToAction
-    title="Ready to boost your projects?"
-    subtitle="Join our community of satisfied customers who have transformed their work with our templates."
+    title="Start free. Upgrade when you need infrastructure."
+    subtitle="No credit card required to get started. Bring your own broker or use ours."
     actions={[
       {
         variant: 'primary',
-        text: 'Get started now',
-        href: '/',
+        text: 'Get started free',
+        href: '/download',
+      },
+      {
+        text: 'Read the docs',
+        href: 'https://docs.iulink.com',
+        target: '_blank',
       },
     ]}
   />

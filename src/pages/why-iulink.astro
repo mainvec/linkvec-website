@@ -1,0 +1,251 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Features from '~/components/widgets/Features.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Why iulink',
+  description:
+    'Most connectivity tools make you pick between full product and full control. iulink gives you both — your broker, your path, your choice.',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    tagline="Why iulink"
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Get started free',
+        href: '/download',
+        icon: 'tabler:download',
+      },
+      { text: 'Read the docs', href: 'https://docs.iulink.com', target: '_blank' },
+    ]}
+  >
+    <Fragment slot="title">
+      Full product.<br />
+      <span class="text-accent dark:text-white">Full choice.</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Most connectivity tools make you pick one. Managed infrastructure means no control. DIY means no product. iulink
+      doesn't ask you to choose.
+    </Fragment>
+  </Hero>
+
+  <!-- Features Widget *************** -->
+
+  <Features
+    id="choices"
+    tagline="Six layers of choice"
+    title="Every layer of your connection is yours to configure."
+    subtitle="Choose the broker, path, mode, relay, interface, and what to share. Change any layer independently. Nothing is locked in."
+    items={[
+      {
+        title: 'Your broker',
+        description:
+          'Run iubroker on any server you own, or use our hosted broker. The broker is the trust boundary — keep it on your hardware for maximum control.',
+        icon: 'tabler:server',
+      },
+      {
+        title: 'Your connection path',
+        description:
+          'Three-path fallback: direct peer-to-peer when possible, broker-routed when not, relay-assisted as a last resort. All automatic.',
+        icon: 'tabler:route',
+      },
+      {
+        title: 'Your tunnel mode',
+        description:
+          'TCP tunnel (Serverlet), HTTP-over-broker (Weblet), or WireGuard mesh (Netlet). Pick the right primitive for the use case, not the one your tool forces on you.',
+        icon: 'tabler:switch',
+      },
+      {
+        title: 'Your relay',
+        description:
+          'Use community relay nodes or run your own. Relay nodes are infrastructure — they never see your cleartext traffic.',
+        icon: 'tabler:radio',
+      },
+      {
+        title: 'Your interface',
+        description:
+          'CLI for scripting and automation. Web dashboard for visual management. API for integration. All backed by the same protocol.',
+        icon: 'tabler:terminal-2',
+      },
+      {
+        title: 'What you share',
+        description:
+          'A single port. An HTTP service. An entire mesh VPN. A hub of services shared with a team. Share exactly what you intend — nothing more.',
+        icon: 'tabler:share',
+      },
+    ]}
+  />
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isReversed
+    tagline="Security model"
+    title="Your broker is your network boundary."
+    items={[
+      {
+        title: 'SSH stays invisible',
+        description:
+          'Your SSH daemon never binds to a public port. The broker is the only publicly reachable endpoint. A compromised broker cannot access your services without authentication.',
+      },
+      {
+        title: 'Outbound-only from your machine',
+        description:
+          'Serverlets open outbound connections to the broker. Your firewall never needs an inbound rule. Port forwarding is never required.',
+      },
+      {
+        title: 'Self-host the broker, own the boundary',
+        description:
+          'When you run iubroker, you control the certificates, the authentication policies, and the audit log. No third-party sits in your trust chain.',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?auto=format&fit=crop&w=2070&q=80',
+      alt: 'Secure network architecture diagram',
+    }}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isAfterContent
+    tagline="Threat model"
+    title="Least privilege by design."
+    items={[
+      {
+        title: 'No root required',
+        description:
+          'The daemon and all tunnel types run as your user. Nothing is setuid. Nothing binds to privileged ports. A vulnerability in iulink cannot escalate to root.',
+      },
+      {
+        title: 'Bounded blast radius',
+        description:
+          'Each serverlet exposes exactly one port. Compromising one serverlet cannot reach other ports on the same machine. Services are isolated at the tunnel level.',
+      },
+      {
+        title: 'Compare to root-daemon competitors',
+        description:
+          'Tools that require root to run their agent give that agent (and any bug in it) full machine access. iulink deliberately avoids this design.',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&w=2070&q=80',
+      alt: 'Secure code and least privilege architecture',
+    }}
+  />
+
+  <!-- Features2 Widget ************** -->
+
+  <Features2
+    tagline="How we compare"
+    title="Positioned between managed and DIY."
+    subtitle="The gap iulink owns: a complete product where you still control the infrastructure."
+    items={[
+      {
+        title: 'vs ngrok',
+        description:
+          'ngrok is fast to start but you cannot run the broker yourself — all traffic goes through their infrastructure. iulink gives you the same zero-config experience with the option to self-host.',
+        icon: 'tabler:arrows-exchange',
+      },
+      {
+        title: 'vs Cloudflare Tunnel',
+        description:
+          'Cloudflare Tunnel is excellent for HTTP but requires Cloudflare as your broker. You cannot choose a different trust anchor. iulink decouples the product from the operator.',
+        icon: 'tabler:arrows-exchange',
+      },
+      {
+        title: 'vs Tailscale',
+        description:
+          'Tailscale is a polished mesh VPN but the coordination server is Tailscale\'s. Headscale exists but is unsupported. iulink\'s broker is a first-class self-hosted component, not an afterthought.',
+        icon: 'tabler:arrows-exchange',
+      },
+      {
+        title: 'vs NetBird',
+        description:
+          'NetBird is close in philosophy but focused on the VPN mesh. iulink covers the full spectrum: TCP tunnels, HTTP-over-broker, and mesh VPN in one tool.',
+        icon: 'tabler:arrows-exchange',
+      },
+      {
+        title: 'vs WireGuard DIY',
+        description:
+          'Raw WireGuard gives you maximum control but requires static IPs, manual key exchange, and firewall rules. iulink wraps WireGuard into a managed experience without taking control away.',
+        icon: 'tabler:arrows-exchange',
+      },
+      {
+        title: 'vs SSH -R tunnels',
+        description:
+          'SSH reverse tunnels work but have no lifecycle management, no named services, no hub sharing, and no relay fallback. iulink is what SSH tunnels would look like as a product.',
+        icon: 'tabler:arrows-exchange',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Features2>
+
+  <!-- FAQs Widget ******************* -->
+
+  <FAQs
+    title="Competitive objections"
+    tagline="FAQs"
+    classes={{ container: 'max-w-6xl' }}
+    items={[
+      {
+        title: "Why not just use Tailscale?",
+        description:
+          "Tailscale is a great product for mesh VPN. If that's all you need and you're comfortable with Tailscale as the coordination server, it's a fine choice. iulink is better when you need more than a VPN (TCP tunnels, HTTP services, hub sharing) or when you need to self-host every component.",
+      },
+      {
+        title: 'How is iulink different from ngrok?',
+        description:
+          'ngrok is primarily a tunnel-to-localhost tool for development. It is fast and easy, but you cannot run your own ngrok broker. With iulink you can use our hosted broker exactly like ngrok, or run iubroker yourself. The choice is always yours.',
+      },
+      {
+        title: 'Is iulink a VPN?',
+        description:
+          'iulink includes a WireGuard-based mesh VPN (Netlet and BrokerMesh), but it is not only a VPN. It also provides named TCP tunnels (Serverlet/Clientlet) and HTTP-over-broker (Weblet/WebClientlet). Use the mode that fits the use case.',
+      },
+      {
+        title: 'Is the broker a man-in-the-middle?',
+        description:
+          'The broker handles signaling and routing, but it does not terminate your application traffic. End-to-end encryption is between the peers. The broker sees metadata (which hubs are connected) but not your cleartext data.',
+      },
+    ]}
+  />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    title="Try it free. No account required if you bring your own broker."
+    subtitle="Get connected in under 60 seconds."
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Get started free',
+        href: '/download',
+        icon: 'tabler:download',
+      },
+      {
+        text: 'Read the docs',
+        href: 'https://docs.iulink.com',
+        target: '_blank',
+      },
+    ]}
+  />
+</Layout>
