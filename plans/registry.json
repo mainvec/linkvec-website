@@ -1,0 +1,14 @@
+{
+  "issues": [
+    {
+      "id": 1,
+      "type": "chore",
+      "title": "Upgrade to Astro 6 + Tailwind CSS 4",
+      "status": "review",
+      "plan": "plans/001-upgrade-astro6-tw4.md",
+      "branch": "chore/001-upgrade-astro6-tw4",
+      "github_issue": "TBD",
+      "created": "2026-05-11"
+    }
+  ]
+}
