@@ -20,7 +20,7 @@ export const headerData = {
     },
   ],
   actions: [
-    { text: 'Get started free', href: getPermalink('/download'), variant: 'primary' },
+    { text: 'Get Started', href: getPermalink('/download'), variant: 'primary' },
   ],
 };
 

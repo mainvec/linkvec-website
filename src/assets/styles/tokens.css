@@ -1,0 +1,43 @@
+/*
+ * iulink design tokens — kept in sync with iulink-ui/src/assets/main.css
+ * These are the canonical CSS custom properties for the iulink visual system.
+ * AstroWind components reference these via --aw-color-* in CustomStyles.astro.
+ */
+
+/* Light palette */
+:root {
+  --color-bg: #f5f5f5;
+  --color-surface: #ffffff;
+  --color-surface-raised: #f0f0f0;
+  --color-surface-hover: #e8e8e8;
+  --color-border: #e0e0e0;
+  --color-border-strong: #c8c8c8;
+  --color-text-primary: #171717;
+  --color-text-secondary: #6b6b6b;
+  --color-text-muted: #a0a0a0;
+  --color-accent: #171717;
+  --color-accent-hover: #333333;
+  --color-accent-fg: #ffffff;
+  --color-success: #16a34a;
+  --color-warning: #ca8a04;
+  --color-danger: #dc2626;
+}
+
+/* Dark palette */
+.dark {
+  --color-bg: #101010;
+  --color-surface: #171717;
+  --color-surface-raised: #1e1e1e;
+  --color-surface-hover: #252525;
+  --color-border: #2a2a2a;
+  --color-border-strong: #3a3a3a;
+  --color-text-primary: #ededed;
+  --color-text-secondary: #737373;
+  --color-text-muted: #525252;
+  --color-accent: #ffffff;
+  --color-accent-hover: #e0e0e0;
+  --color-accent-fg: #000000;
+  --color-success: #22c55e;
+  --color-warning: #eab308;
+  --color-danger: #ef4444;
+}

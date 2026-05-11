@@ -72,4 +72,8 @@ ui:
   theme: 'system' # Values: "system" | "light" | "dark" | "light:only" | "dark:only"
 
 announcement:
-  isEnabled: false
+  isEnabled: true
+  label: Alpha
+  text: iulink is in early alpha — expect rough edges. We'd love your feedback.
+  href: https://github.com/iulink/iulink/discussions
+  isTargetBlank: true
