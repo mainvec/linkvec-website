@@ -1,11 +1,9 @@
 ---
-// iulink logo — matches AppToolbar.vue in iulink-ui
+// LinkVec logo
+import logoRaw from '~/assets/images/linkvec-logo.svg?raw';
 ---
 
 <span class="inline-flex items-center gap-2 select-none">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none" class="w-10 h-10 shrink-0" aria-hidden="true">
-    <circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="2"/>
-    <path d="M10 16h12M16 10v12" stroke="#4a6cf7" stroke-width="2" stroke-linecap="round"/>
-  </svg>
-  <span class="text-2xl font-semibold text-default whitespace-nowrap"><span class="font-bold">iu</span>link</span>
+  <span class="w-10 h-10 shrink-0 [&>svg]:w-full [&>svg]:h-full" set:html={logoRaw}></span>
+  <span class="text-2xl font-semibold text-default whitespace-nowrap"><span class="font-bold">link</span>vec</span>
 </span>
