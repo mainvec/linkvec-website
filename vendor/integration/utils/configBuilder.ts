@@ -210,7 +210,11 @@ const getAnnouncement = (config: Config) => {
     isTargetBlank: false,
   };
 
-  return merge({}, _default, (config as { announcement?: AnnouncementConfig })?.announcement ?? {}) as AnnouncementConfig;
+  return merge(
+    {},
+    _default,
+    (config as { announcement?: AnnouncementConfig })?.announcement ?? {}
+  ) as AnnouncementConfig;
 };
 
 export default (config: Config) => ({

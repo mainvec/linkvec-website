@@ -63,15 +63,15 @@
 
 ### Core upgrades
 
-| Package | Upstream | This fork |
-| :--- | :--- | :--- |
-| `astro` | ^5.x | **^6.3.1** |
-| `tailwindcss` | ^3.x | **^4.3.0** |
-| `@tailwindcss/vite` | — | **^4.3.0** (replaces `@astrojs/tailwind`) |
-| `@astrojs/mdx` | ^4.x | **^5.x** |
-| `tailwind-merge` | ^2.x | **^3.x** |
-| `astro-embed` | ^0.9.x | **^0.13.x** |
-| Node.js engines | `^18\|\|^20\|\|>=21` | **`^22.12.0`** |
+| Package             | Upstream             | This fork                                 |
+| :------------------ | :------------------- | :---------------------------------------- |
+| `astro`             | ^5.x                 | **^6.3.1**                                |
+| `tailwindcss`       | ^3.x                 | **^4.3.0**                                |
+| `@tailwindcss/vite` | —                    | **^4.3.0** (replaces `@astrojs/tailwind`) |
+| `@astrojs/mdx`      | ^4.x                 | **^5.x**                                  |
+| `tailwind-merge`    | ^2.x                 | **^3.x**                                  |
+| `astro-embed`       | ^0.9.x               | **^0.13.x**                               |
+| Node.js engines     | `^18\|\|^20\|\|>=21` | **`^22.12.0`**                            |
 
 ### Tailwind CSS 4 migration
 

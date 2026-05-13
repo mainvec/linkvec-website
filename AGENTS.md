@@ -1,14 +1,14 @@
-# iulink Website — Agent Guidelines
+# Linkvec Website — Agent Guidelines
 
-This is the marketing website for **iulink** (`iulink.com`), built on a fork of [AstroWind](https://github.com/hi100e/astrowind6) (Astro 6 + Tailwind CSS 4). The fork lives under `vendor/integration/`.
+This is the marketing website for **Linkvec** (`linkvec.com`), built on a fork of [AstroWind](https://github.com/hi100e/astrowind6) (Astro 6 + Tailwind CSS 4). The fork lives under `vendor/integration/`.
 
 ---
 
 ## Product Context
 
-iulink is a connectivity platform. The headline principle is **"connect on your terms"** — users choose their broker, data path, tunnel mode, and interface. This positions iulink between fully-managed (ngrok, Cloudflare Tunnel) and fully-DIY (raw WireGuard).
+Linkvec is a connectivity platform. The headline principle is **"connect on your terms"** — users choose their broker, data path, tunnel mode, and interface. This positions Linkvec between fully-managed (ngrok, Cloudflare Tunnel) and fully-DIY (raw WireGuard).
 
-**GTM and launch strategy**: `../IULINK - GTM and Lauch/` (sibling directory). Read those docs before writing any copy or making positioning decisions.
+**GTM and launch strategy**: `../LinkVec - GTM and Lauch/` (sibling directory). Read those docs before writing any copy or making positioning decisions.
 
 ### Messaging rules
 
@@ -19,28 +19,28 @@ iulink is a connectivity platform. The headline principle is **"connect on your 
 
 ### Product vocabulary (use exactly these terms)
 
-| Term | What it is |
-|------|-----------|
-| Broker | Signaling/access boundary — the network trust zone |
-| Hub | Logical group and lifecycle container for tunnels |
-| Serverlet | Exposes a local TCP port through a tunnel |
-| Clientlet | Connects to a remote serverlet |
-| Weblet | Exposes a local HTTP service over the broker (no QUIC required) |
-| WebClientlet | Local HTTP proxy to a remote weblet |
-| Netlet | WireGuard-based mesh VPN |
-| BrokerMesh | Turnkey Netlet for an entire broker (one command) |
-| Relay | UDP relay node (infrastructure, not a user-facing primitive) |
+| Term         | What it is                                                      |
+| ------------ | --------------------------------------------------------------- |
+| Broker       | Signaling/access boundary — the network trust zone              |
+| Hub          | Logical group and lifecycle container for tunnels               |
+| Serverlet    | Exposes a local TCP port through a tunnel                       |
+| Clientlet    | Connects to a remote serverlet                                  |
+| Weblet       | Exposes a local HTTP service over the broker (no QUIC required) |
+| WebClientlet | Local HTTP proxy to a remote weblet                             |
+| Netlet       | WireGuard-based mesh VPN                                        |
+| BrokerMesh   | Turnkey Netlet for an entire broker (one command)               |
+| Relay        | UDP relay node (infrastructure, not a user-facing primitive)    |
 
 ---
 
 ## Tech Stack
 
-| Layer | Choice |
-|-------|--------|
-| Framework | Astro 6 (`^6.3.1`) |
-| CSS | Tailwind CSS 4 via `@tailwindcss/vite` (no `tailwind.config.js`) |
-| Node | `^22.12.0` |
-| Deployment | Vercel (primary), Netlify (secondary), Docker/nginx |
+| Layer      | Choice                                                           |
+| ---------- | ---------------------------------------------------------------- |
+| Framework  | Astro 6 (`^6.3.1`)                                               |
+| CSS        | Tailwind CSS 4 via `@tailwindcss/vite` (no `tailwind.config.js`) |
+| Node       | `^22.12.0`                                                       |
+| Deployment | Vercel (primary), Netlify (secondary), Docker/nginx              |
 
 ### Tailwind CSS 4 — important
 
@@ -68,18 +68,18 @@ npm run fix          # eslint --fix + prettier -w
 
 ## Pages
 
-| Route | File | Status |
-|-------|------|--------|
-| `/` | `src/pages/index.astro` | Template placeholder — needs iulink copy |
-| `/pricing` | `src/pages/pricing.astro` | Template placeholder — needs iulink tiers |
-| `/services` | `src/pages/services.astro` | Template placeholder |
-| `/about` | `src/pages/about.astro` | Template placeholder |
-| `/contact` | `src/pages/contact.astro` | Template placeholder |
-| `/blog` | `src/pages/[...blog]/` | Enabled via `src/config.yaml` |
-| `/privacy` | `src/pages/privacy.md` | Needs legal review |
-| `/terms` | `src/pages/terms.md` | Needs legal review |
+| Route       | File                       | Status                                     |
+| ----------- | -------------------------- | ------------------------------------------ |
+| `/`         | `src/pages/index.astro`    | Template placeholder — needs Linkvec copy  |
+| `/pricing`  | `src/pages/pricing.astro`  | Template placeholder — needs Linkvec tiers |
+| `/services` | `src/pages/services.astro` | Template placeholder                       |
+| `/about`    | `src/pages/about.astro`    | Template placeholder                       |
+| `/contact`  | `src/pages/contact.astro`  | Template placeholder                       |
+| `/blog`     | `src/pages/[...blog]/`     | Enabled via `src/config.yaml`              |
+| `/privacy`  | `src/pages/privacy.md`     | Needs legal review                         |
+| `/terms`    | `src/pages/terms.md`       | Needs legal review                         |
 
-All pages are still using AstroWind template demo content. Every page edit should replace template copy with iulink-specific copy.
+All pages are still using AstroWind template demo content. Every page edit should replace template copy with Linkvec-specific copy.
 
 ---
 
@@ -97,7 +97,7 @@ Feature-workflow instructions apply: see `.mainvec/instructions/feature-workflow
 ## Content / Copy Guidelines
 
 - **Tagline**: "Connect on your terms"
-- **One-liner**: "iulink is a connectivity platform that lets you expose ports, share services, and build mesh VPNs through any NAT — with your broker or ours."
+- **One-liner**: "Linkvec is a connectivity platform that lets you expose ports, share services, and build mesh VPNs through any NAT — with your broker or ours."
 - Launch channels to keep in mind when writing CTAs: Hacker News (Show HN) and r/selfhosted — copy should resonate with developers who value control and self-hosting.
 - Free hosted broker tier is the zero-friction entry point; paid features gate managed infrastructure convenience.
-- See `../IULINK - GTM and Lauch/iulink-gtm-strategy.md` for full ICP, competitive positioning, and pricing model.
+- See `../LinkVec - GTM and Lauch/Linkvec-gtm-strategy.md` for full ICP, competitive positioning, and pricing model.

@@ -7,8 +7,8 @@ import Content from '~/components/widgets/Content.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const metadata = {
-  title: 'Download iulink',
-  description: 'Install iulink in 60 seconds. One command. Works behind CGNAT. No router config required.',
+  title: 'Download Linkvec',
+  description: 'Install Linkvec in 60 seconds. One command. Works behind CGNAT. No router config required.',
 };
 ---
 
@@ -29,19 +29,19 @@ const metadata = {
       {
         title: 'Step 1: <span class="font-medium">Install</span>',
         description:
-          'Run the installer. Works on Linux, macOS, and Windows (WSL). No root required — the daemon runs as your user.<br><br><code class="text-sm bg-slate-100 dark:bg-slate-800 px-3 py-1 rounded font-mono">curl -fsSL https://get.iulink.com | sh</code>',
+          'Run the installer. Works on Linux, macOS, and Windows (WSL). No root required — the daemon runs as your user.<br><br><code class="text-sm bg-slate-100 dark:bg-slate-800 px-3 py-1 rounded font-mono">curl -fsSL https://downloads.linkvec.com/linkvec-install.sh | sh</code>',
         icon: 'tabler:download',
       },
       {
         title: 'Step 2: <span class="font-medium">Expose a port</span>',
         description:
-          'Point iulink at any local port. It creates a serverlet — a named tunnel others can reach through your broker.<br><br><code class="text-sm bg-slate-100 dark:bg-slate-800 px-3 py-1 rounded font-mono">iulink expose --port 8080 --name myservice</code>',
+          'Point Linkvec at any local port. It creates a serverlet — a named tunnel others can reach through your broker.<br><br><code class="text-sm bg-slate-100 dark:bg-slate-800 px-3 py-1 rounded font-mono">linkvec expose --port 8080 --name myservice</code>',
         icon: 'tabler:plug',
       },
       {
         title: 'Step 3: <span class="font-medium">Connect from anywhere</span>',
         description:
-          'On any other machine, connect to the service by name. The broker routes the connection — CGNAT is not a problem.<br><br><code class="text-sm bg-slate-100 dark:bg-slate-800 px-3 py-1 rounded font-mono">iulink connect --service iulink://myservice</code>',
+          'On any other machine, connect to the service by name. The broker routes the connection — CGNAT is not a problem.<br><br><code class="text-sm bg-slate-100 dark:bg-slate-800 px-3 py-1 rounded font-mono">linkvec connect --service linkvec://myservice</code>',
         icon: 'tabler:plug-connected',
       },
       {
@@ -96,18 +96,17 @@ const metadata = {
   <Content
     isReversed
     title="Bring your own broker — no account needed."
-    subtitle="Use the free hosted broker to get started in seconds, or point iulink at any broker you run yourself."
+    subtitle="Use the free hosted broker to get started in seconds, or point Linkvec at any broker you run yourself."
     items={[
       {
         title: 'Self-hosted broker',
-        description:
-          'Run iubroker on any VPS or homelab machine. Your traffic never touches our infrastructure.',
+        description: 'Run linkvec-broker on any VPS or homelab machine. Your traffic never touches our infrastructure.',
         icon: 'tabler:server',
       },
       {
         title: 'Free hosted broker',
         description:
-          'No setup. iulink connects to our shared broker automatically. Upgrade to a dedicated broker any time.',
+          'No setup. linkvec connects to our shared broker automatically. Upgrade to a dedicated broker any time.',
         icon: 'tabler:cloud',
       },
       {
@@ -140,7 +139,7 @@ const metadata = {
       },
       {
         text: 'Read the docs',
-        href: 'https://docs.iulink.com',
+        href: 'https://docs.linkvec.com',
         target: '_blank',
       },
     ]}

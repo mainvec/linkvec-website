@@ -10,7 +10,7 @@ import FAQs from '~/components/widgets/FAQs.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const metadata = {
-  title: 'iulink — Connect on your terms',
+  title: 'Linkvec — Connect on your terms',
   ignoreTitleTemplate: true,
 };
 ---
@@ -26,9 +26,12 @@ const metadata = {
         href: '/download',
         icon: 'tabler:download',
       },
-      { text: 'Read the docs', href: 'https://docs.iulink.com', target: '_blank' },
+      { text: 'Read the docs', href: 'https://docs.linkvec.com', target: '_blank' },
     ]}
-    image={{ src: '~/assets/images/iulink-hero.png', alt: 'iulink — expose ports and share services through any NAT' }}
+    image={{
+      src: '~/assets/images/linkvec-hero.png',
+      alt: 'Linkvec — expose ports and share services through any NAT',
+    }}
   >
     <Fragment slot="title">
       Connect on <span class="text-accent dark:text-white">your terms.</span>
@@ -36,7 +39,7 @@ const metadata = {
 
     <Fragment slot="subtitle">
       <span class="hidden sm:inline">
-        iulink is a connectivity platform that lets you expose ports, share services, and build mesh VPNs through any
+        Linkvec is a connectivity platform that lets you expose ports, share services, and build mesh VPNs through any
         NAT — with your broker or ours.
       </span>
       <span class="block mb-1 sm:hidden font-bold text-blue-600">Expose ports through any NAT. No router config.</span>
@@ -51,20 +54,20 @@ const metadata = {
 
   <Features
     id="features"
-    tagline="What iulink gives you"
+    tagline="What Linkvec gives you"
     title="Every layer is a choice, not a constraint."
-    subtitle="Most connectivity tools lock you into their infrastructure. iulink exposes the controls."
+    subtitle="Most connectivity tools lock you into their infrastructure. Linkvec exposes the controls."
     items={[
       {
         title: 'Bring your own broker',
         description:
-          'Run iubroker on any VPS or homelab machine. Your data plane never touches our servers. Or use our hosted broker — same CLI, same protocol.',
+          'Run linkvec-broker on any VPS or homelab machine. Your data plane never touches our servers. Or use our hosted broker — same CLI, same protocol.',
         icon: 'tabler:server',
       },
       {
         title: 'Works through any NAT',
         description:
-          'CGNAT, double-NAT, strict firewalls — iulink uses a three-path fallback model. Direct when possible, relayed when not. Automatic and silent.',
+          'CGNAT, double-NAT, strict firewalls — Linkvec uses a three-path fallback model. Direct when possible, relayed when not. Automatic and silent.',
         icon: 'tabler:network',
       },
       {
@@ -114,7 +117,7 @@ const metadata = {
       {
         title: 'Self-hosted means self-controlled',
         description:
-          'Run iubroker on hardware you own. Audit the code. Rotate the keys. Set your own access policies.',
+          'Run linkvec-broker on hardware you own. Audit the code. Rotate the keys. Set your own access policies.',
       },
     ]}
     image={{
@@ -132,12 +135,12 @@ const metadata = {
   <Content
     isAfterContent
     tagline="Three-path model"
-    title="Choose your path — or let iulink choose for you."
+    title="Choose your path — or let Linkvec choose for you."
     items={[
       {
         title: 'Direct (peer-to-peer)',
         description:
-          'When both peers can reach each other, iulink establishes a direct connection. No relay, no latency overhead.',
+          'When both peers can reach each other, Linkvec establishes a direct connection. No relay, no latency overhead.',
       },
       {
         title: 'Broker-routed',
@@ -147,7 +150,7 @@ const metadata = {
       {
         title: 'UDP relay',
         description:
-          'When the broker path is blocked, iulink falls back to a relay node. Fully automatic — you never configure this.',
+          'When the broker path is blocked, Linkvec falls back to a relay node. Fully automatic — you never configure this.',
       },
     ]}
     image={{
@@ -164,19 +167,19 @@ const metadata = {
       {
         title: 'Step 1: <span class="font-medium">Install</span>',
         description:
-          'One-liner installer. Runs as your user — no root, no sudo, no package manager lock-in.<br><br><code class="text-sm bg-slate-100 dark:bg-slate-800 px-3 py-1 rounded font-mono">curl -fsSL https://get.iulink.com | sh</code>',
+          'One-liner installer. Runs as your user — no root, no sudo, no package manager lock-in.<br><br><code class="text-sm bg-slate-100 dark:bg-slate-800 px-3 py-1 rounded font-mono">curl -fsSL https://downloads.linkvec.com/linkvec-install.sh | sh</code>',
         icon: 'tabler:download',
       },
       {
         title: 'Step 2: <span class="font-medium">Expose a port</span>',
         description:
-          'Create a named serverlet for any local port. Works behind CGNAT — no router config needed.<br><br><code class="text-sm bg-slate-100 dark:bg-slate-800 px-3 py-1 rounded font-mono">iulink expose --port 8080 --name myservice</code>',
+          'Create a named serverlet for any local port. Works behind CGNAT — no router config needed.<br><br><code class="text-sm bg-slate-100 dark:bg-slate-800 px-3 py-1 rounded font-mono">linkvec expose --port 8080 --name myservice</code>',
         icon: 'tabler:plug',
       },
       {
         title: 'Step 3: <span class="font-medium">Connect from anywhere</span>',
         description:
-          'Connect by service name from any other machine. The broker handles routing.<br><br><code class="text-sm bg-slate-100 dark:bg-slate-800 px-3 py-1 rounded font-mono">iulink connect --service iulink://myservice</code>',
+          'Connect by service name from any other machine. The broker handles routing.<br><br><code class="text-sm bg-slate-100 dark:bg-slate-800 px-3 py-1 rounded font-mono">linkvec connect --service linkvec://myservice</code>',
         icon: 'tabler:plug-connected',
       },
       {
@@ -200,15 +203,15 @@ const metadata = {
       {
         title: 'Does it work behind CGNAT?',
         description:
-          'Yes. CGNAT is the primary use case. iulink never requires inbound ports on your machine. It uses outbound connections to the broker, with relay fallback when needed.',
+          'Yes. CGNAT is the primary use case. Linkvec never requires inbound ports on your machine. It uses outbound connections to the broker, with relay fallback when needed.',
       },
       {
         title: 'Can I run my own broker?',
         description:
-          'Yes. iubroker is open-source (AGPL) and runs on any Linux machine. Point the iulink CLI at your own broker with one config line.',
+          'Yes. linkvec-broker is open-source (AGPL) and runs on any Linux machine. Point the linkvec CLI at your own broker with one config line.',
       },
       {
-        title: 'Does iulink require root?',
+        title: 'Does Linkvec require root?',
         description:
           'No. The daemon and all tunnel types run as a normal user. Nothing binds to privileged ports. WireGuard-based tunnels (Netlet) require a kernel module, which is present on most modern Linux distros.',
       },
@@ -218,9 +221,9 @@ const metadata = {
           'Existing direct peer-to-peer connections stay up. New connections and relay-dependent tunnels will fail until the broker is restored. Self-hosted broker users control their own uptime.',
       },
       {
-        title: 'How is iulink different from ngrok or Cloudflare Tunnel?',
+        title: 'How is Linkvec different from ngrok or Cloudflare Tunnel?',
         description:
-          'Those tools manage the infrastructure for you — you use their broker, their relay, their rules. iulink gives you the same capabilities but lets you run any component yourself. Same product, full choice.',
+          'Those tools manage the infrastructure for you — you use their broker, their relay, their rules. Linkvec gives you the same capabilities but lets you run any component yourself. Same product, full choice.',
       },
     ]}
   />
@@ -236,8 +239,8 @@ const metadata = {
         icon: 'tabler:download',
       },
       {
-        text: 'Why iulink?',
-        href: '/why-iulink',
+        text: 'Why Linkvec',
+        href: '/why-linkvec',
       },
     ]}
   >

@@ -1,6 +1,12 @@
 [build]
   publish = "dist"
   command = "npm run build"
+
+[[redirects]]
+  from = "/why-iulink"
+  to = "/why-linkvec"
+  status = 301
+
 [build.processing.html]
   pretty_urls = false
 [[headers]]

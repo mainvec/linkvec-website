@@ -1,6 +1,6 @@
 site:
-  name: iulink
-  site: 'https://iulink.com'
+  name: Linkvec
+  site: 'https://linkvec.com'
   base: '/'
   trailingSlash: false
 
@@ -9,22 +9,22 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: iulink — Connect on your terms
-    template: '%s — iulink'
-  description: "iulink is a connectivity platform that lets you expose ports, share services, and build mesh VPNs through any NAT — with your broker or ours."
+    default: Linkvec — Connect on your terms
+    template: '%s — Linkvec'
+  description: 'Linkvec is a connectivity platform that lets you expose ports, share services, and build mesh VPNs through any NAT — with your broker or ours.'
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: iulink
+    site_name: Linkvec
     images:
       - url: '~/assets/images/default.png'
         width: 1200
         height: 628
     type: website
   twitter:
-    handle: '@iulink'
-    site: '@iulink'
+    handle: '@linkvec'
+    site: '@linkvec'
     cardType: summary_large_image
 
 i18n:
@@ -74,6 +74,6 @@ ui:
 announcement:
   isEnabled: true
   label: Alpha
-  text: iulink is in early alpha — expect rough edges. We'd love your feedback.
-  href: https://github.com/iulink/iulink/discussions
+  text: Linkvec is in early alpha — expect rough edges. We'd love your feedback.
+  href: https://github.com/linkvec/linkvec/discussions
   isTargetBlank: true

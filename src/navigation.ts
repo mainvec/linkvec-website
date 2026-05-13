@@ -3,8 +3,8 @@ import { getPermalink, getBlogPermalink, getAsset } from './utils/permalinks';
 export const headerData = {
   links: [
     {
-      text: 'Why iulink',
-      href: getPermalink('/why-iulink'),
+      text: 'Why Linkvec',
+      href: getPermalink('/why-linkvec'),
     },
     {
       text: 'Pricing',
@@ -12,16 +12,14 @@ export const headerData = {
     },
     {
       text: 'Docs',
-      href: 'https://docs.iulink.com',
+      href: 'https://docs.linkvec.com',
     },
     {
       text: 'Blog',
       href: getBlogPermalink(),
     },
   ],
-  actions: [
-    { text: 'Get Started', href: getPermalink('/download'), variant: 'primary' },
-  ],
+  actions: [{ text: 'Get Started', href: getPermalink('/download'), variant: 'primary' as const }],
 };
 
 export const footerData = {
@@ -29,7 +27,7 @@ export const footerData = {
     {
       title: 'Product',
       links: [
-        { text: 'Why iulink', href: getPermalink('/why-iulink') },
+        { text: 'Why Linkvec', href: getPermalink('/why-linkvec') },
         { text: 'Pricing', href: getPermalink('/pricing') },
         { text: 'Download', href: getPermalink('/download') },
         { text: 'Changelog', href: '#' },
@@ -47,11 +45,11 @@ export const footerData = {
     {
       title: 'Resources',
       links: [
-        { text: 'Docs', href: 'https://docs.iulink.com' },
+        { text: 'Docs', href: 'https://docs.linkvec.com' },
         { text: 'Blog', href: getBlogPermalink() },
-        { text: 'Discord community', href: '#' },
-        { text: 'GitHub', href: 'https://github.com/iulink' },
-        { text: 'Status', href: 'https://status.iulink.com' },
+        { text: 'Discord community', href: 'https://discord.gg/linkvec' },
+        { text: 'GitHub', href: 'https://github.com/linkvec' },
+        { text: 'Status', href: 'https://status.linkvec.com' },
       ],
     },
     {
@@ -69,12 +67,12 @@ export const footerData = {
     { text: 'Privacy Policy', href: getPermalink('/privacy') },
   ],
   socialLinks: [
-    { ariaLabel: 'X', icon: 'tabler:brand-x', href: 'https://x.com/iulink' },
-    { ariaLabel: 'Discord', icon: 'tabler:brand-discord', href: '#' },
-    { ariaLabel: 'GitHub', icon: 'tabler:brand-github', href: 'https://github.com/iulink' },
+    { ariaLabel: 'X', icon: 'tabler:brand-x', href: 'https://x.com/linkvec' },
+    { ariaLabel: 'Discord', icon: 'tabler:brand-discord', href: 'https://discord.gg/linkvec' },
+    { ariaLabel: 'GitHub', icon: 'tabler:brand-github', href: 'https://github.com/linkvec' },
     { ariaLabel: 'RSS', icon: 'tabler:rss', href: getAsset('/rss.xml') },
   ],
   footNote: `
-    &copy; ${new Date().getFullYear()} iulink. AGPL v3 for open-source components. All rights reserved.
+    &copy; ${new Date().getFullYear()} Linkvec. AGPL v3 for open-source components. All rights reserved.
   `,
 };
